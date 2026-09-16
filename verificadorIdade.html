@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Verificador de Idade</title>
+</head>
+<body>
+    <h1>Verificador de Idade</h1>
+
+    Ano de Nascimento: <input type="number" id="ano"><br><br>
+    
+    Sexo: 
+    <input type="radio" name="sexo" value="m" checked> Masculino
+    <input type="radio" name="sexo" value="f"> Feminino
+    <br><br>
+
+    <input type="button" value="Verificar" onclick="verificar()">
+
+    <div id="resultado">
+        Preencha os dados acima para ver o resultado...
+    </div>
+
+    <img id="foto" src="" width="200">
+
+    <script>
+        function verificar() {
+            var ano = Number(document.getElementById('ano').value)
+            var sexo = document.querySelector('input[name="sexo"]:checked').value
+            var anoAtual = new Date().getFullYear()
+            var idade = anoAtual - ano
+            var foto = document.getElementById('foto')
+            var faixa = ''
+            var imagem = ''
+
+            if (idade >= 0 && idade < 3) {
+                faixa = 'bebê'
+                if (sexo == 'm') {
+                    imagem = 'imagens/bebe-m.png'
+                } else {
+                    imagem = 'imagens/bebe-f.png'
+                }
+            } else if (idade < 13) {
+                faixa = 'criança'
+                if (sexo == 'm') {
+                    imagem = 'imagens/crianca-m.png'
+                } else {
+                    imagem = 'imagens/crianca-f.png'
+                }
+            } else if (idade < 18) {
+                faixa = 'adolescente'
+                if (sexo == 'm') {
+                    imagem = 'imagens/adolescente-m.png'
+                } else {
+                    imagem = 'imagens/adolescente-f.png'
+                }
+            } else if (idade < 60) {
+                faixa = 'adulto'
+                if (sexo == 'm') {
+                    imagem = 'imagens/adulto-m.png'
+                } else {
+                    imagem = 'imagens/adulto-f.png'
+                }
+            } else {
+                faixa = 'idoso'
+                if (sexo == 'm') {
+                    imagem = 'imagens/idoso-m.png'
+                } else {
+                    imagem = 'imagens/idoso-f.png'
+                }
+            }
+
+            document.getElementById('resultado').innerHTML = 
+                `Detectamos ${faixa} com ${idade} anos.`
+
+            foto.src = imagem
+        }
+    </script>
+</body>
+</html>

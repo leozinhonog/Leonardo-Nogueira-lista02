@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Tabuada</title>
+</head>
+<body>
+    <h1>Tabuada</h1>
+
+    <p>Escreva um número e veja a tabuada dele</p>
+    <input type="number" id="num">
+    <input type="button" value="Gerar" onclick="gerar()">
+
+    <div id="tabuada"></div>
+
+    <script>
+        function gerar() {
+            var n = Number(document.getElementById('num').value)
+            var res = document.getElementById('tabuada')
+            res.innerHTML = `Tabuada do número: ${n}<br><br>`
+
+            for (var i = 0; i <= 10; i++) {
+                res.innerHTML += `${n} x ${i} = ${n * i}<br>`
+            }
+        }
+    </script>
+</body>
+</html>

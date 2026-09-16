@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Modo Claro/Escuro</title>
+</head>
+<body>
+    <h1>Modo Claro/Escuro</h1>
+    <input type="button" value="Mudar Tema" onclick="mudar()">
+
+    <script>
+        function mudar() {
+            var corpo = document.body
+
+            if (corpo.style.background == 'black') {
+                corpo.style.background = 'white'
+                corpo.style.color = 'black'
+            } else {
+                corpo.style.background = 'black'
+                corpo.style.color = 'white'
+            }
+        }
+    </script>
+</body>
+</html>

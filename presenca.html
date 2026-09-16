@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Confirmar Presença</title>
+</head>
+<body>
+    <h1>Confirmar Presença</h1>
+
+    <label><input type="checkbox" value="João"> João</label><br>
+    <label><input type="checkbox" value="Márcio"> Márcio</label><br>
+    <label><input type="checkbox" value="Fabiana"> Fabiana</label><br>
+    <label><input type="checkbox" value="Jorge"> Jorge</label><br>
+    <label><input type="checkbox" value="Silvana"> Silvana</label><br>
+    <label><input type="checkbox" value="Luiz"> Luiz</label><br>
+    <label><input type="checkbox" value="Carlos"> Carlos</label><br>
+    <label><input type="checkbox" value="Pablo"> Pablo</label><br><br>
+
+    <input type="button" value="Confirmar Presença" onclick="confirmar()">
+
+    <div id="resultado"></div>
+
+    <script>
+        function confirmar() {
+            var checks = document.getElementsByTagName('input')
+            var presentes = ''
+            var ausentes = ''
+
+            for (var i = 0; i < checks.length; i++) {
+                if (checks[i].type == 'checkbox') {
+                    if (checks[i].checked) {
+                        presentes += checks[i].value + ', '
+                    } else {
+                        ausentes += checks[i].value + ', '
+                    }
+                }
+            }
+
+            document.getElementById('resultado').innerHTML = `
+                <h3>Resultado</h3>
+                <p style="color: green"><strong>Presentes:</strong> ${presentes}</p>
+                <p style="color: red"><strong>Ausentes:</strong> ${ausentes}</p>
+            `
+        }
+    </script>
+</body>
+</html>

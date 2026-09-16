@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Destacar Nome</title>
+    <style>
+        .vermelho {
+            color: red;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <h1>Destacar Nome</h1>
+
+    <p>Escreva um nome e veja ele destacado na lista</p>
+    <input type="text" id="nome" onkeyup="destacar()">
+
+    <ol id="lista">
+        <li>João</li>
+        <li>Márcio</li>
+        <li>Fabiana</li>
+        <li>Jorge</li>
+        <li>Silvana</li>
+        <li>Luiz</li>
+        <li>Carlos</li>
+        <li>Pablo</li>
+    </ol>
+
+    <script>
+        function destacar() {
+            var nome = document.getElementById('nome').value
+            var itens = document.getElementsByTagName('li')
+
+            for (var i = 0; i < itens.length; i++) {
+                if (itens[i].innerText == nome) {
+                    itens[i].className = 'vermelho'
+                } else {
+                    itens[i].className = ''
+                }
+            }
+        }
+    </script>
+</body>
+</html>

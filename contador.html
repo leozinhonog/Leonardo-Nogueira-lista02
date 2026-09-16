@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Contador de Cliques</title>
+</head>
+<body>
+    <h1>Contador de Cliques</h1>
+
+    <input type="button" value="Clique aqui!" onclick="contar()">
+    <input type="button" value="Zerar contador" onclick="zerar()">
+
+    <p id="resultado">Cliques: 0</p>
+
+    <script>
+        var cliques = 0
+
+        function contar() {
+            cliques = cliques + 1
+            document.getElementById('resultado').innerHTML = `Cliques: ${cliques}`
+        }
+
+        function zerar() {
+            cliques = 0
+            document.getElementById('resultado').innerHTML = `Cliques: 0`
+        }
+    </script>
+</body>
+</html>
