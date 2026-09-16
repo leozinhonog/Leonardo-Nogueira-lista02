@@ -1,1 +1,0 @@
-# Leonardo-Nogueira-lista02
